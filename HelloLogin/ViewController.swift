@@ -29,20 +29,43 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-         print("View will load")
-       Iblabel.text = "Welcome to ios Programming"
         
-        print(Iblabel.text)
     }
 
 
+    
+    
     @IBAction func btnClikeme(_ sender: UIButton)
     {
-        Iblabel.text = "Oh Ok!"
+        if sender.tag == 2
+        {
+        let alertController = UIAlertController(title: "iOScreator", message:
+                   "Hello, world!", preferredStyle: .alert)
+               alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+              alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+            
+            
+
+               self.present(alertController, animated: true, completion: nil)
+        
+        }
+        if sender.tag == 0
+        {
+            let alertController = UIAlertController(title: "iOScreator", message:
+                 "Hello, world!", preferredStyle: .alert)
+             alertController.addAction(UIAlertAction(title: "hello", style: .cancel))
+            alertController.addAction(UIAlertAction(title: "bye", style: .destructive))
+
+             self.present(alertController, animated: true, completion: nil)
+            
+        }
         
     }
+    @IBAction func ShowActionSheet(_ sender: Any) {
+    }
     
+    
+  
     @IBOutlet weak var IdField: UITextField!
 }
 
